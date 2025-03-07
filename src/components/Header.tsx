@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import { useEffect } from "react";
+import { useParams } from "react-router";
 
 const StyledHeader = styled.header`
     display: flex;
@@ -12,10 +14,26 @@ const StyledHeader = styled.header`
 `;
 
 export default function Header() {
-        return(
-          <StyledHeader>
-              <h1>Sophia Howson</h1>
-              <p>My resume!</p>
-          </StyledHeader>
-        );
+    const currentPath=useParams();
+
+    let lastValue=Object.values(currentPath).pop() || "";
+    lastValue = lastValue.charAt(0).toUpperCase() + lastValue.slice(1);
+    if (lastValue === "") {
+        lastValue = "Home";
+    }
+    else if (lastValue==="LeadershipActivities") {
+        lastValue = "Leadership and Activities";
+        document.title = lastValue;
+    }
+
+    useEffect(()=>{
+        document.title= lastValue + " | Resume";
+    },[lastValue])
+
+    return(
+      <StyledHeader>
+          <h1>Sophia Howson</h1>
+          <p>{lastValue}</p>
+      </StyledHeader>
+    );
 }
