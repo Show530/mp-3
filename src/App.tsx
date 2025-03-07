@@ -2,12 +2,13 @@ import {createBrowserRouter, Route, RouterProvider, Routes} from "react-router";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Education from "./components/Education";
-import Employment from "./components/Employment.tsx";
-import LeadershipActivities from "./components/LeadershipActivities.tsx";
-import Projects from "./components/Projects.tsx";
-import Skills from "./components/Skills.tsx";
+import Employment from "./components/Employment";
+import LeadershipActivities from "./components/LeadershipActivities";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+
 import {styled} from "styled-components";
 
 const StyledPageWrapper = styled.div`
