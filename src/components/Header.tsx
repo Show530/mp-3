@@ -23,7 +23,6 @@ export default function Header() {
     }
     else if (lastValue==="LeadershipActivities") {
         lastValue = "Leadership and Activities";
-        document.title = lastValue;
     }
 
     useEffect(()=>{
