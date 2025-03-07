@@ -6,16 +6,23 @@ const StyledImg = styled.img`
     margin-bottom: 2vw;
 
     @media screen and (max-width: 900px) {
-        display: block;
-        margin: auto;
         max-width: 50%;
+    }
+`;
+
+const StyledDiv = styled.div`
+    @media screen and (max-width: 900px) {
+        display: flex;
+        justify-content: center;
     }
 `;
 
 export default function Home() {
     return (
         <>
-            <StyledImg src="/headshot.JPEG" alt="Headshot of me, Sophia Howson" id="headshot"/>
+            <StyledDiv>
+                <StyledImg src="/headshot.JPEG" alt="Headshot of me, Sophia Howson" id="headshot"/>
+            </StyledDiv>
             <StyledP>My name is Sophia Howson. I'm a senior studying computer science at Boston University. I currently
                 live in Boston, but I'm from New Jersey. In my free time I ice skate on a competitive team, craft,
                 read books, and hang out with my friends!</StyledP>
