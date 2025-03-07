@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
 export default function Footer() {
     return (
         <StyledFooter>
-            <p>All rights reserved by Sophia Howson <Link to={`/credits`}>Credits</Link> &copy;</p>
+            <p>All rights reserved by Sophia Howson <Link to={`/credits`}>Credits</Link> &copy; </p>
         </StyledFooter>
     );
 }
