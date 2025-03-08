@@ -32,7 +32,7 @@ export default function Header() {
     return(
       <StyledHeader>
           <h1>Sophia Howson</h1>
-          <p>{lastValue}</p>
+          <p> {lastValue} </p>
       </StyledHeader>
     );
 }

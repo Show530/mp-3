@@ -57,13 +57,15 @@ const StyledOutput = styled.output`
 export default function MyCalculator() {
     const [firstNumber, setFirstNumber] = useState(0);
     const [secondNumber, setSecondNumber] = useState(0);
+    const [outputNumber, setOutputNumber] = useState(0);
 
     let outputtedElement= document.getElementById("output");
 
     function display(result: number) {
         if(outputtedElement != null) {
-            outputtedElement.innerHTML = String(result);
 
+            // outputtedElement.innerHTML = String(result);
+            setOutputNumber(result);
             // color red
             if (result < 0) {
                 outputtedElement.style.color = "red";
@@ -123,7 +125,8 @@ export default function MyCalculator() {
 // reset calc - 3 fields
     function resetCalc() {
         if (outputtedElement != null) {
-            outputtedElement.innerHTML = '';
+            setOutputNumber(0);
+            // outputtedElement.innerHTML = '';
             setFirstNumber(0);
             setSecondNumber(0);
         }
@@ -135,11 +138,9 @@ export default function MyCalculator() {
                 <StyledLabel htmlFor="first-number">First number: </StyledLabel>
                 <StyledFirstInput type="number"
                                   value={firstNumber}
-                                  id="first-number"
                                   onChange={(e) => setFirstNumber(Number(e.target.value))}/>
                 <StyledLabel htmlFor="second-number">Second number: </StyledLabel>
                 <StyledSecondInput type="number"
-                                   id="second-number"
                                    value={secondNumber}
                                    onChange={(e) => setSecondNumber(Number(e.target.value))}/>
             </StyledInputsDiv>
@@ -151,7 +152,7 @@ export default function MyCalculator() {
                 <StyledButton onClick={powerFunc}> **</StyledButton>
                 <StyledButton onClick={resetCalc}> Clear</StyledButton>
             </StyledButtonsDiv>
-            <StyledOutput id="output"></StyledOutput>
+            <StyledOutput id="output">{outputNumber}</StyledOutput>
         </>
     );
 
