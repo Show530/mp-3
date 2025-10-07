@@ -11,17 +11,18 @@ const StyledNav = styled.nav`
 
 const StyledUl = styled.ul`
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    //justify-content: space-evenly;
+    justify-content: space-between;
     list-style: none;
     text-align: center;
     /*background-color: #d174c9;*/
     padding-left: 0;
 
-    @media screen and (max-width: 900px) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+    //@media screen and (max-width: 900px) {
+    //    flex-direction: row;
+    //    justify-content: space-between;
+    //}
 `;
 const StyledLi = styled.li`
     width: 50%;
